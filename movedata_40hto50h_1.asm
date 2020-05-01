@@ -1,0 +1,50 @@
+org 0
+
+mov 40h,#1
+mov 41h,#2
+mov 42h,#3
+mov 43h,#4
+mov 44h,#5
+mov 45h,#6
+mov 46h,#7
+mov 47h,#8
+mov 48h,#9
+mov 49h,#10
+mov 4Ah,#11
+mov 4Bh,#12
+mov 4Ch,#13
+mov 4Dh,#14
+mov 4Eh,#15
+
+mov A,40H
+mov 50H,A
+mov A,41H
+mov 51H,A
+mov A,42H
+mov 52H,A
+mov A,43H
+mov 53H,A
+mov A,44H
+mov 54H,A
+mov A,45H
+mov 55H,A
+mov A,46H
+mov 56H,A
+mov A,47H
+mov 57H,A
+mov A,48H
+mov 58H,A
+mov A,49H
+mov 59H,A
+mov A,4AH
+mov 5AH,A
+mov A,4BH
+mov 5BH,A
+mov A,4CH
+mov 5CH,A
+mov A,4DH
+mov 5DH,A
+mov A,4EH
+mov 5EH,A
+
+end
