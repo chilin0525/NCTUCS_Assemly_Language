@@ -1,14 +1,14 @@
 ORG 0H
 
-        MOV 40H, #12
-        MOV 41H, #13
-        MOV 42H, #13
-        MOV 43H, #13
+        MOV 40H, #144
+        MOV 41H, #145
+        MOV 42H, #146
+        MOV 43H, #147
 
-        MOV 50H, #13
-        MOV 51H, #13
-        MOV 52H, #13
-        MOV 53H, #13
+        MOV 50H, #148
+        MOV 51H, #149
+        MOV 52H, #150
+        MOV 53H, #151
 
         MOV R0, #43H    ;pointer of bank 0
         MOV R1, #65H    ;result storage bank 0
@@ -24,6 +24,7 @@ ORG 0H
         ADDC A, @R1
         DEC R1
         CLR RS0
+        dA A
         MOV @R1, A
         DEC R0
         DEC R1
@@ -36,5 +37,6 @@ ORG 0H
         SJMP $
 
 END
+
 
 
