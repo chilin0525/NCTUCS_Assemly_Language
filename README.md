@@ -39,7 +39,7 @@ shift by 1bit
 | 33H      | 01100100(100) |
 
 
-
+shift 32bit data by 3bit
 對應：**shift_5.asm**
 
 | Column 1 | Column 2      |
