@@ -11,10 +11,9 @@
 
 ![](https://i.imgur.com/m4iEArk.png)
 
-## shift_left By 3bit
+## shift_left 
 10101100(Dec:172)->01100000(Dec:96)
-
-## shift_left_32 
+ 
 
 ![](https://i.imgur.com/ybWW5Ie.png)
 
@@ -28,7 +27,7 @@
 
 
 
-shift by 1bit
+### shift by 1bit
 對應：**shift_4.asm**
 
 | Column 1 | Column 2      |
@@ -39,7 +38,7 @@ shift by 1bit
 | 33H      | 01100100(100) |
 
 
-shift 32bit data by 3bit
+### shift 32bit data by 3bit
 對應：**shift_5.asm**
 
 | Column 1 | Column 2      |
