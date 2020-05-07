@@ -11,5 +11,7 @@
 
 ![](https://i.imgur.com/m4iEArk.png)
 
-## shift_left
+## shift_left By 3bit
 10101100(Dec:172)->01100000(Dec:96)
+
+## shift_left_32 
