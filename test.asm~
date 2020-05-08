@@ -1,0 +1,21 @@
+org 0
+
+mov 30H,#255
+mov 31H,#0
+clr C
+mov R3,#2
+
+loop:
+    mov A,30H
+    rrc A
+    mov 30H,A
+    mov A,31H
+    rlc A
+    mov 31H,A
+    djnz R3,loop
+    mov A,31H
+    rrc A
+    mov 31H,A
+    sjmp $
+
+end

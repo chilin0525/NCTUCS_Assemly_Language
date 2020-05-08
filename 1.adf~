@@ -1,0 +1,10 @@
+# Assembler debug file for MCU 8051 IDE v1.4.7
+# Used assembler: MCU 8051 IDE
+# Date: 04/09/2020
+A57B2FD3BA04B5BC3DE3C4FC61803ADD "1.asm" 
+0 3 0 117 16 48
+0 4 3 117 17 64
+0 5 6 121 80
+0 6 8 123 4
+0 9 10 192 5
+0 10 12 123 4
