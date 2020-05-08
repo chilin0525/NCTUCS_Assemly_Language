@@ -72,3 +72,4 @@
 | 00101011 | 11000101(197) |
 
 
+![](https://i.imgur.com/TKdwR2C.png)
