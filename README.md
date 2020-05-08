@@ -73,3 +73,7 @@
 
 
 ![](https://i.imgur.com/TKdwR2C.png)
+
+
+## Bit Reversal
+
