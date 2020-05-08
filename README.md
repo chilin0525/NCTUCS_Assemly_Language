@@ -74,6 +74,31 @@
 
 ![](https://i.imgur.com/TKdwR2C.png)
 
+&nbsp;
 
 ## Bit Reversal
+
+![](https://i.imgur.com/a3FzF5k.png)
+
+3 bit -> bit_reversal.asm
+8 bit -> bit_reversal2.asm
+32 bit -> bit_reversal3.asm
+
+
+
+| bit number | answer   |
+| ---------- |:-------- |
+| 10110111   | 00000111 |
+
+| bit number | answer   |
+| ---------- |:-------- |
+| 10110111   | 11101101 |
+
+
+| bit number | answer   |
+| ---------- |:-------- |
+| 10110111   | 11010100(212) |
+| 01011101   | 01100011(99) |
+| 11000110   | 10111010(186) |
+| 00101011   | 11101101(237) |
 
