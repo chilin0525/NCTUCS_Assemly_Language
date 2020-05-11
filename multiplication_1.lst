@@ -1,33 +1,48 @@
-shift_6                                                                                                                 PAGE 1
-                         1     ORG 0
-                         2
-0000 7530B7              3     mov 30H,#10110111B
-0003 75315D              4     mov 31H,#01011101B
-0006 7532C6              5     mov 32H,#11000110B
-0009 75332B              6     mov 33H,#00101011B
-                         7
-000C E530                8     MOV A,30H
-000E 4560                9     ORL A,60H
-0010 33                 10     RLC A
-0011 9200               11     MOV 00H,C
-0013 7B03               12     MOV R3,#3
-0015 7930               13     MOV R1,#30H
-                        14
-0017 E7                 15     MOV A,@R1
-0018 A200               16     MOV C,00H
-001A 13                 17     RRC A
-001B F7                 18     MOV @R1,A
-001C 09                 19     INC R1
-                        20
-                        21     loop1:
-001D E7                 22             MOV A,@R1
-001E 13                 23             RRc A
-001F F7                 24             MOV @R1,A
-0020 09                 25             inc R1
-0021 DBFA               26     djnz R3,loop1
+multiplication_1                                                                                                        PAGE 1
+                         1     org 0
+0000 7E6A                2     mov R6,#106
+0002 7F57                3     mov R7,#87
+0004 7C74                4     mov R4,#116
+0006 7D5B                5     mov R5,#91
+0008 EF                  6      mov     a,r7
+0009 8DF0                7               mov     b,r5
+000B A4                  8               mul     ab      ; ab = R7*R5
+                         9
+000C ABF0               10               mov     r3,b
+000E CF                 11               xch     a,r7    ; a = R7
+                        12
+000F 8CF0               13               mov     b,r4
+0011 A4                 14               mul     ab      ; ab = R4*R7
+                        15
+0012 2B                 16               add     a,r3
+0013 FB                 17               mov     r3,a
+0014 7400               18               mov     a,#0
+0016 35F0               19               addc    a,b
+0018 CD                 20               xch     a,r5    ; a = R5
+                        21
+0019 8EF0               22               mov     b,r6
+001B A4                 23               mul     ab      ; ab = R5*R6
+                        24
+001C 2B                 25               add     a,r3
+001D CE                 26               xch     a,r6
                         27
-0023 80FE               28     sjmp $
-                        29     END
+001E C5F0               28               xch     a,b     ; b = R6
+                        29
+0020 3D                 30               addc    a,r5
+0021 FD                 31               mov     r5,a
+0022 7400               32               mov     a,#0
+0024 3400               33               addc    a,#0
+0026 CC                 34               xch     a,r4
+                        35
+0027 A4                 36               mul     ab      ; ab = R4*R6
+                        37
+0028 2D                 38               add     a,r5
+0029 FD                 39               mov     r5,a
+002A E5F0               40               mov     a,b
+002C 3C                 41               addc    a,r4
+002D FC                 42               mov     r4,a
+                        43
+                        44     end
 ASSEMBLY COMPLETE, NO ERRORS FOUND, NO WARNINGS
 
 
@@ -44,7 +59,7 @@ ADDH . . . . . . . . . . . . . . . .  D  ADDR  00F5H  NOT USED
 ADDL . . . . . . . . . . . . . . . .  D  ADDR  00F4H  NOT USED
 AUXR . . . . . . . . . . . . . . . .  D  ADDR  008EH  NOT USED
 AUXR1. . . . . . . . . . . . . . . .  D  ADDR  00A2H  NOT USED
-B. . . . . . . . . . . . . . . . . .  D  ADDR  00F0H  NOT USED
+B. . . . . . . . . . . . . . . . . .  D  ADDR  00F0H
 BDRCON . . . . . . . . . . . . . . .  D  ADDR  009BH  NOT USED
 BDRCON_1 . . . . . . . . . . . . . .  D  ADDR  009CH  NOT USED
 BRL. . . . . . . . . . . . . . . . .  D  ADDR  009AH  NOT USED
@@ -122,7 +137,6 @@ IT1. . . . . . . . . . . . . . . . .  B  ADDR  008AH  NOT USED
 KBE. . . . . . . . . . . . . . . . .  D  ADDR  009DH  NOT USED
 KBF. . . . . . . . . . . . . . . . .  D  ADDR  009EH  NOT USED
 KBLS . . . . . . . . . . . . . . . .  D  ADDR  009CH  NOT USED
-LOOP1. . . . . . . . . . . . . . . .  C  ADDR  001DH
 OSCCON . . . . . . . . . . . . . . .  D  ADDR  0086H  NOT USED
 OV . . . . . . . . . . . . . . . . .  B  ADDR  00D2H  NOT USED
 P. . . . . . . . . . . . . . . . . .  B  ADDR  00D0H  NOT USED

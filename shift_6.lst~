@@ -11,21 +11,22 @@ shift_6                                                                         
 0010 33                 10     RLC A
 0011 9200               11     MOV 00H,C
 0013 7B03               12     MOV R3,#3
-0015 7930               13     Mov R1,#30H
+0015 7930               13     MOV R1,#30H
                         14
 0017 E7                 15     MOV A,@R1
 0018 A200               16     MOV C,00H
 001A 13                 17     RRC A
-001B 09                 18     INC R1
-                        19
-                        20     loop1:
-001C E7                 21             MOV A,@R1
-001D 13                 22             RRc A
-001E F7                 23             MoV @R1,A
-001F 09                 24             inc R1
-0020 DBFA               25     djnz R3,loop1
-                        26
-                        27     END
+001B F7                 18     MOV @R1,A
+001C 09                 19     INC R1
+                        20
+                        21     loop1:
+001D E7                 22             MOV A,@R1
+001E 13                 23             RRc A
+001F F7                 24             MOV @R1,A
+0020 09                 25             inc R1
+0021 DBFA               26     djnz R3,loop1
+                        27
+                        28     END
 ASSEMBLY COMPLETE, NO ERRORS FOUND, NO WARNINGS
 
 
@@ -120,7 +121,7 @@ IT1. . . . . . . . . . . . . . . . .  B  ADDR  008AH  NOT USED
 KBE. . . . . . . . . . . . . . . . .  D  ADDR  009DH  NOT USED
 KBF. . . . . . . . . . . . . . . . .  D  ADDR  009EH  NOT USED
 KBLS . . . . . . . . . . . . . . . .  D  ADDR  009CH  NOT USED
-LOOP1. . . . . . . . . . . . . . . .  C  ADDR  001CH
+LOOP1. . . . . . . . . . . . . . . .  C  ADDR  001DH
 OSCCON . . . . . . . . . . . . . . .  D  ADDR  0086H  NOT USED
 OV . . . . . . . . . . . . . . . . .  B  ADDR  00D2H  NOT USED
 P. . . . . . . . . . . . . . . . . .  B  ADDR  00D0H  NOT USED

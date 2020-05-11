@@ -25,4 +25,5 @@ loop1:
 	inc R1
 djnz R3,loop1
 
+sjmp $
 END
