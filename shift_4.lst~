@@ -1,20 +1,24 @@
 shift_4                                                                                                                 PAGE 1
                          1     org 0
                          2
-0000 753053              3     mov 30H,#83
-0003 7531D5              4     mov 31H,#213
-0006 7532B3              5     mov 32H,#179
-0009 753332              6     mov 33H,#50
-000C 7833                7     mov R0,#33H
-000E 7B04                8     mov R3,#4
-                         9
-0010 E6                 10             mov A,@R0
-0011 33                 11             rlc A
-0012 F6                 12             mov @R0,A
-                        13
-                        14
-0013 80FE               15     sjmp $
-                        16     end
+0000 753053              3     mov 30H,#01010011B
+0003 7531D5              4     mov 31H,#11010101B
+0006 7532B3              5     mov 32H,#10110011B
+0009 753332              6     mov 33H,#00110010B
+000C 7B04                7     mov R3,#4
+                         8
+                         9     loop1:
+000E 7833               10             mov R0,#33H
+0010 C3                 11             clr C
+0011 E6                 12             mov A,@R0
+0012 33                 13             rlc A
+0013 F6                 14             mov @R0,A
+0014 18                 15             dec R0
+0015 DBF7               16             djnz R3,loop1
+                        17
+                        18
+0017 80FE               19     sjmp $
+                        20     end
 ASSEMBLY COMPLETE, NO ERRORS FOUND, NO WARNINGS
 
 
@@ -109,6 +113,7 @@ IT1. . . . . . . . . . . . . . . . .  B  ADDR  008AH  NOT USED
 KBE. . . . . . . . . . . . . . . . .  D  ADDR  009DH  NOT USED
 KBF. . . . . . . . . . . . . . . . .  D  ADDR  009EH  NOT USED
 KBLS . . . . . . . . . . . . . . . .  D  ADDR  009CH  NOT USED
+LOOP1. . . . . . . . . . . . . . . .  C  ADDR  000EH
 OSCCON . . . . . . . . . . . . . . .  D  ADDR  0086H  NOT USED
 OV . . . . . . . . . . . . . . . . .  B  ADDR  00D2H  NOT USED
 P. . . . . . . . . . . . . . . . . .  B  ADDR  00D0H  NOT USED

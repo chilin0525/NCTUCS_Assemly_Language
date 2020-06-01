@@ -27,9 +27,11 @@ shift_7                                                                         
 0021 F7                 26                     MOV @R1,A
 0022 09                 27                     inc R1
 0023 DBFA               28             djnz R3,loop1
-0025 DCEE               29     djnz R4,loop2
-                        30
-                        31     END
+                        29
+0025 DCEE               30     djnz R4,loop2
+                        31
+0027 80FE               32     sjmp $
+                        33     END
 ASSEMBLY COMPLETE, NO ERRORS FOUND, NO WARNINGS
 
 

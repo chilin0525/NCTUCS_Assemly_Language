@@ -1,10 +1,10 @@
 org 0
 
 clr C
-mov 30H,#83
-mov 31H,#213
-mov 32H,#179
-mov 33H,#50
+mov 30H,#01010011B
+mov 31H,#11010101B
+mov 32H,#10110011B
+mov 33H,#00110010B
 mov R0,#33H
 mov R3,#4
 

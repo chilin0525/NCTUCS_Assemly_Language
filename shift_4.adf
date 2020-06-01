@@ -1,7 +1,7 @@
 # Assembler debug file for MCU 8051 IDE v1.4.7
 # Used assembler: MCU 8051 IDE
-# Date: 05/08/2020
-A1E09C1879026DBCCE3C2828076FF764 "shift_4.asm" 
+# Date: 05/19/2020
+AE5B177E4726FA60739D0F96D16ECE72 "shift_4.asm" 
 0 3 0 195
 0 4 1 117 48 83
 0 5 4 117 49 213

@@ -9,26 +9,29 @@ shift_7                                                                         
 000C E530                8     MOV A,30H
 000E 4560                9     ORL A,60H
 0010 33                 10     RLC A
-0011 9200               11     MOV 00H,C
-                        12
-                        13     loop2:
-0013 7930               14             MOV R1,#30H
-0015 E7                 15             MOV A,@R1
-0016 A200               16             MOV C,00H
-0018 7B03               17             MOV R3,#3
-001A 13                 18             RRC A
-001B F7                 19             MOV @R1,A
-001C 09                 20             INC R1
-                        21
-                        22             loop1:
-001D E7                 23                     MOV A,@R1
-001E 13                 24                     RRc A
-001F F7                 25                     MOV @R1,A
-0020 09                 26                     inc R1
-0021 DBFA               27             djnz R3,loop1
-0023 DCEE               28     djnz R4,loop2
+0011 7C03               11     MOV R4,#3
+0013 9200               12     MOV 00H,C
+                        13
+                        14     loop2:
+0015 7930               15             MOV R1,#30H
+0017 E7                 16             MOV A,@R1
+0018 A200               17             MOV C,00H
+001A 7B03               18             MOV R3,#3
+001C 13                 19             RRC A
+001D F7                 20             MOV @R1,A
+001E 09                 21             INC R1
+                        22
+                        23             loop1:
+001F E7                 24                     MOV A,@R1
+0020 13                 25                     RRc A
+0021 F7                 26                     MOV @R1,A
+0022 09                 27                     inc R1
+0023 DBFA               28             djnz R3,loop1
                         29
-                        30     END
+0025 DCEE               30     djnz R4,loop2
+                        31
+0027 80FE               32     sjmp $
+                        33     END
 ASSEMBLY COMPLETE, NO ERRORS FOUND, NO WARNINGS
 
 
@@ -123,8 +126,8 @@ IT1. . . . . . . . . . . . . . . . .  B  ADDR  008AH  NOT USED
 KBE. . . . . . . . . . . . . . . . .  D  ADDR  009DH  NOT USED
 KBF. . . . . . . . . . . . . . . . .  D  ADDR  009EH  NOT USED
 KBLS . . . . . . . . . . . . . . . .  D  ADDR  009CH  NOT USED
-LOOP1. . . . . . . . . . . . . . . .  C  ADDR  001DH
-LOOP2. . . . . . . . . . . . . . . .  C  ADDR  0013H
+LOOP1. . . . . . . . . . . . . . . .  C  ADDR  001FH
+LOOP2. . . . . . . . . . . . . . . .  C  ADDR  0015H
 OSCCON . . . . . . . . . . . . . . .  D  ADDR  0086H  NOT USED
 OV . . . . . . . . . . . . . . . . .  B  ADDR  00D2H  NOT USED
 P. . . . . . . . . . . . . . . . . .  B  ADDR  00D0H  NOT USED

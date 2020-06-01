@@ -1,10 +1,10 @@
 org 0
 
 
-mov 30H,#83
-mov 31H,#213
-mov 32H,#179
-mov 33H,#50
+mov 30H,#01010011B
+mov 31H,#11010101B
+mov 32H,#10110011B
+mov 33H,#00110010B
 mov R4,#3
 
 loop2:
@@ -19,5 +19,5 @@ mov R0,#33H
 	djnz R3,loop1
 djnz R4,loop2
 
-sjmp $
+;sjmp $
 end

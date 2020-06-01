@@ -26,7 +26,9 @@ loop2:
 		MOV @R1,A
 		inc R1
 	djnz R3,loop1
+
 djnz R4,loop2
 
+sjmp $
 END
 

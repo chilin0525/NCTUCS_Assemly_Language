@@ -1,27 +1,34 @@
-shift_5                                                                                                                 PAGE 1
+test2                                                                                                                   PAGE 1
                          1     org 0
                          2
-                         3
-0000 753053              4     mov 30H,#01010011B
-0003 7531D5              5     mov 31H,#11010101B
-0006 7532B3              6     mov 32H,#10110011B
-0009 753332              7     mov 33H,#00110010B
-000C 7C03                8     mov R4,#3
-                         9
-                        10     loop2:
-000E C3                 11     clr C
-000F 7B04               12     mov R3,#4
-0011 7833               13     mov R0,#33H
-                        14             loop1:
-0013 E6                 15             mov A,@R0
-0014 33                 16             rlc A
-0015 F6                 17             mov @R0,A
-0016 18                 18             dec R0
-0017 DBFA               19             djnz R3,loop1
-0019 DCF3               20     djnz R4,loop2
-                        21
-                        22     ;sjmp $
-                        23     end
+0000 7530B7              3     mov 30H,#10110111B
+0003 75315D              4     mov 31H,#01011101B
+0006 7532C6              5     mov 32H,#11000110B
+0009 75332B              6     mov 33H,#00101011B
+                         7
+000C E530                8     mov A,30H
+000E 4560                9     orl A,60H
+0010 33                 10     rlc A
+0011 9200               11     mov 00H,C
+                        12
+0013 7B03               13             mov R3,#3
+0015 7930               14             mov R1,#30H
+0017 E7                 15             mov A,@R1
+0018 A200               16             mov C,00H
+001A 13                 17             rrc A
+001B F7                 18             mov @R1,A
+001C 09                 19             inc R1
+                        20
+                        21             loop:
+001D E7                 22                     mov A,@R1
+001E 13                 23                     rrc A
+001F F7                 24                     mov @R1,A
+0020 09                 25                     inc R1
+0021 DBFA               26             djnz R3,loop
+                        27
+                        28
+0023 80FE               29     sjmp $
+                        30     end
 ASSEMBLY COMPLETE, NO ERRORS FOUND, NO WARNINGS
 
 
@@ -116,8 +123,7 @@ IT1. . . . . . . . . . . . . . . . .  B  ADDR  008AH  NOT USED
 KBE. . . . . . . . . . . . . . . . .  D  ADDR  009DH  NOT USED
 KBF. . . . . . . . . . . . . . . . .  D  ADDR  009EH  NOT USED
 KBLS . . . . . . . . . . . . . . . .  D  ADDR  009CH  NOT USED
-LOOP1. . . . . . . . . . . . . . . .  C  ADDR  0013H
-LOOP2. . . . . . . . . . . . . . . .  C  ADDR  000EH
+LOOP . . . . . . . . . . . . . . . .  C  ADDR  001DH
 OSCCON . . . . . . . . . . . . . . .  D  ADDR  0086H  NOT USED
 OV . . . . . . . . . . . . . . . . .  B  ADDR  00D2H  NOT USED
 P. . . . . . . . . . . . . . . . . .  B  ADDR  00D0H  NOT USED

@@ -8,7 +8,7 @@ mov 33H,#00101011B
 mov A,30H
 orl A,60H
 rlc A
-mov 00H,C
+git mov 00H,C
 
 	mov R3,#3
 	mov R1,30H
