@@ -135,3 +135,9 @@ after delete
 | 30H | 31H | 32H | 33H | 34H | 35H | 36H | 37H |
 | --- | --- | --- | --- | --- | --- |:--- | --- |
 | 1   | 2   | 4   | 5   | 6   | 7   |    |     |
+
+&nbsp;
+
+## 2D Array insert
+
+![](https://i.imgur.com/jRWbthF.png)
