@@ -1,4 +1,4 @@
-2D_array_update1                                                                                                        PAGE 1
+2D_array_insert1                                                                                                        PAGE 1
                          1     org 0
                          2
 0000 753001              3     mov 30H,#1
@@ -9,30 +9,39 @@
 000F 753506              8     mov 35H,#6
 0012 753607              9     mov 36H,#7
 0015 753708             10     mov 37H,#8
-0018 753809             11     mov 38H,#9
-001B 75390A             12     mov 39H,#10
-001E 753A0B             13     mov 3AH,#11
-0021 753B0C             14     mov 3BH,#12
+0018 755009             11     mov 50H,#9
+001B 75510A             12     mov 51H,#10
+001E 75520B             13     mov 52H,#11
+0021 75530C             14     mov 53H,#12
                         15
-0024 7D01               16     mov R5,#1
-0026 7E02               17     mov R6,#2
-0028 7F63               18     mov R7,#99
-002A 7430               19     mov A,#30H
-                        20
-                        21     add_row:
-002C 2403               22             add A,#3
-002E DEFC               23             djnz R6,add_row
-                        24
-                        25     add_col:
-0030 04                 26             inc A
-0031 DDFD               27             djnz R5,add_col
-                        28
-0033 F8                 29     mov R0,A
-0034 EF                 30     mov A,R7
-0035 F6                 31     mov @R0,A
-                        32
-                        33
-                        34     end
+0024 758155             16     mov sp,#55H
+0027 7B08               17     mov R3,#8
+0029 7837               18     mov R0,#37H
+                        19
+                        20     store_data:
+002B E6                 21             mov A,@R0
+002C C0E0               22             push A
+002E 18                 23             dec R0
+002F DBFA               24             djnz R3,store_data
+                        25
+0031 7B04               26     mov R3,#4
+0033 7850               27     mov R0,#50H
+0035 7934               28     mov R1,#34H
+                        29     insert:
+0037 E6                 30             mov A,@R0
+0038 F7                 31             mov @R1,A
+0039 08                 32             inc R0
+003A 09                 33             inc R1
+003B DBFA               34             djnz R3,insert
+                        35
+003D 7B08               36     mov R3,#8
+                        37     store_back:
+003F D0E0               38             pop A
+0041 F7                 39             mov @R1,A
+0042 09                 40             inc R1
+0043 DBFA               41             djnz R3,store_back
+                        42
+                        43     end
 ASSEMBLY COMPLETE, NO ERRORS FOUND, NO WARNINGS
 
 
@@ -47,8 +56,6 @@ ADCLK. . . . . . . . . . . . . . . .  D  ADDR  00F2H  NOT USED
 ADCON. . . . . . . . . . . . . . . .  D  ADDR  00F3H  NOT USED
 ADDH . . . . . . . . . . . . . . . .  D  ADDR  00F5H  NOT USED
 ADDL . . . . . . . . . . . . . . . .  D  ADDR  00F4H  NOT USED
-ADD_COL. . . . . . . . . . . . . . .  C  ADDR  0030H
-ADD_ROW. . . . . . . . . . . . . . .  C  ADDR  002CH
 AUXR . . . . . . . . . . . . . . . .  D  ADDR  008EH  NOT USED
 AUXR1. . . . . . . . . . . . . . . .  D  ADDR  00A2H  NOT USED
 B. . . . . . . . . . . . . . . . . .  D  ADDR  00F0H  NOT USED
@@ -116,6 +123,7 @@ FE . . . . . . . . . . . . . . . . .  B  ADDR  009FH  NOT USED
 IE . . . . . . . . . . . . . . . . .  D  ADDR  00A8H  NOT USED
 IE0. . . . . . . . . . . . . . . . .  B  ADDR  0089H  NOT USED
 IE1. . . . . . . . . . . . . . . . .  B  ADDR  008BH  NOT USED
+INSERT . . . . . . . . . . . . . . .  C  ADDR  0037H
 INT0 . . . . . . . . . . . . . . . .  B  ADDR  00B2H  NOT USED
 INT1 . . . . . . . . . . . . . . . .  B  ADDR  00B3H  NOT USED
 IP . . . . . . . . . . . . . . . . .  D  ADDR  00B8H  NOT USED
@@ -183,13 +191,15 @@ SINT . . . . . . . . . . . . . . . .  C  ADDR  0023H  NOT USED
 SM0. . . . . . . . . . . . . . . . .  B  ADDR  009FH  NOT USED
 SM1. . . . . . . . . . . . . . . . .  B  ADDR  009EH  NOT USED
 SM2. . . . . . . . . . . . . . . . .  B  ADDR  009DH  NOT USED
-SP . . . . . . . . . . . . . . . . .  D  ADDR  0081H  NOT USED
+SP . . . . . . . . . . . . . . . . .  D  ADDR  0081H
 SPCON. . . . . . . . . . . . . . . .  D  ADDR  00C3H  NOT USED
 SPCR . . . . . . . . . . . . . . . .  D  ADDR  00D5H  NOT USED
 SPDAT. . . . . . . . . . . . . . . .  D  ADDR  00C5H  NOT USED
 SPDR . . . . . . . . . . . . . . . .  D  ADDR  0086H  NOT USED
 SPSR . . . . . . . . . . . . . . . .  D  ADDR  00AAH  NOT USED
 SPSTA. . . . . . . . . . . . . . . .  D  ADDR  00C4H  NOT USED
+STORE_BACK . . . . . . . . . . . . .  C  ADDR  003FH
+STORE_DATA . . . . . . . . . . . . .  C  ADDR  002BH
 T0 . . . . . . . . . . . . . . . . .  B  ADDR  00B4H  NOT USED
 T1 . . . . . . . . . . . . . . . . .  B  ADDR  00B5H  NOT USED
 T2CON. . . . . . . . . . . . . . . .  D  ADDR  00C8H  NOT USED

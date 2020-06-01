@@ -8,6 +8,10 @@ mov 34H,#5
 mov 35H,#6
 mov 36H,#7
 mov 37H,#8
+mov 38H,#13
+mov 39H,#14
+mov 3AH,#15
+mov 3BH,#16
 mov 50H,#9
 mov 51H,#10
 mov 52H,#11
@@ -15,7 +19,7 @@ mov 53H,#12
 
 mov sp,#55H
 mov R3,#8
-mov R0,#34H
+mov R0,#3BH
 
 store_data:
 	mov A,@R0
@@ -38,6 +42,6 @@ store_back:
 	pop A
 	mov @R1,A
 	inc R1	
-	store_back R3,store_back
+	djnz R3,store_back
 
 end
