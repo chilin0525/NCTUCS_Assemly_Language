@@ -138,6 +138,13 @@ after delete
 
 &nbsp;
 
-## 2D Array insert
+## 2D Array update
 
 ![](https://i.imgur.com/jRWbthF.png)
+
+&nbsp;
+
+
+## 2D Array insert
+
+![](https://i.imgur.com/wCwzFPM.png)
