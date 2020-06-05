@@ -1,0 +1,19 @@
+Summary:
+Your program tried indirect access to register at address 0x0104 in ex
+ternal data memory. This register is not implemented on this processor
+ (8051) in this configuration. You can continue in simulation but resu
+
+Error details:
+	Target memory:		XDATA
+	Target address: 	0x0104 (260)
+	Line:			5
+	File:			mid1.asm
+	Project:		1
+
+Processor details:
+	Type:			8051
+	Ram size:		128 B
+	Program memory: 	4096 B
+	External memory:	0 B
+	Expanded memory:	0 B
+
